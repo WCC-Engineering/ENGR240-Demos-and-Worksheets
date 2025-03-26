@@ -1,36 +1,5 @@
-# ENGR240: Class Demos and Worksheets
+# Class Demos and Activities
 
-This repository contains public class demos, worksheets, and activities for ENGR&240: Engineering Computations at Whatcom Community College.
+This folder contains demos and activities used during class sessions to introduce and practice key concepts in Python and numerical methods.
 
-## Repository Purpose
-
-This is a public mirror of the "Class Demos and Activities" folder from the main ENGR240 course repository. It's automatically synchronized whenever content is updated in the source repository.
-
-## Contents
-
-- In-class examples and demonstrations
-- Practice activities
-- Tutorial worksheets
-- Supporting files and resources
-
-## Using These Materials
-
-These materials are designed to be used with Google Colab. You can open any notebook directly in Colab by clicking the "Open in Colab" button at the top of each notebook, or by using the following URL pattern:
-
-```
-https://colab.research.google.com/github/WCC-Engineering/ENGR240-Demos-and-Worksheets/blob/main/PATH_TO_NOTEBOOK.ipynb
-```
-
-## Course Information
-
-- **Title**: ENGR&240: Engineering Computations
-- **Focus**: Numerical solutions to problems in engineering and science using Python
-- **Environment**: Google Colab (browser-based Jupyter notebooks)
-
-## Updates
-
-This repository is automatically updated whenever changes are made to the source materials. You don't need to submit pull requests to this repository, as changes should be made to the source repository first.
-
-## License
-
-These materials are provided for educational purposes.
+Each notebook is designed to be interactive and help students develop their programming and problem-solving skills.
