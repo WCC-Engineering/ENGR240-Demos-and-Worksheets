@@ -1,19 +1,50 @@
-# Class Demos and Activities
+# ENGR240: Engineering Computations
 
-This folder contains demos and activities used during class sessions to introduce and practice key concepts in Python and numerical methods.
+This repository contains class demos, worksheets, and activities for ENGR&240 at Whatcom Community College.
 
-Each notebook is designed to be interactive and help students develop their programming and problem-solving skills.
+## Contents
 
-## Public Availability
+This repository includes:
+- In-class demonstrations
+- Interactive worksheets
+- Practice activities
+- Supporting code examples
 
-These materials (excluding solution files) are automatically synchronized to the public repository at [WCC-Engineering/ENGR240-Demos-and-Worksheets](https://github.com/WCC-Engineering/ENGR240-Demos-and-Worksheets).
+**Note:** Solution files are not included in this public repository.
 
-## Instructor Solutions
+## Quick Access to Worksheets
 
-All solution files (notebooks with "solution" in the filename) have been moved to the `/Solutions` directory at the root of this repository. These files are not synchronized to the public repository.
+| Week | Topic | Open in Colab |
+|------|-------|---------------|
+| Week 1 | Introduction to Python | [Worksheet 1.1](https://colab.research.google.com/github/WCC-Engineering/ENGR240-Demos-and-Worksheets/blob/main/Week%201/worksheet1_template.ipynb) • [Worksheet 1.2](https://colab.research.google.com/github/WCC-Engineering/ENGR240-Demos-and-Worksheets/blob/main/Week%201/worksheet2_template.ipynb) |
+| Week 2 | Functions & Logic | [Browse Week 2](https://github.com/WCC-Engineering/ENGR240-Demos-and-Worksheets/tree/main/Week%202) |
+| Week 3 | Root Finding | [Browse Week 3](https://github.com/WCC-Engineering/ENGR240-Demos-and-Worksheets/tree/main/Week%203) |
 
-## Workflow
+## Using These Materials
 
-When adding new worksheets or activities:
-1. Place template files and demo notebooks in this folder
-2. Place solution files in the `/Solutions` folder with matching week structure
+All notebooks are designed to be run in Google Colab. You can:
+
+1. Click the "Open in Colab" links in the table above
+2. Click the "Open in Colab" button at the top of each notebook 
+3. Use this URL pattern:
+   ```
+   https://colab.research.google.com/github/WCC-Engineering/ENGR240-Demos-and-Worksheets/blob/main/WEEK_FOLDER/NOTEBOOK_NAME.ipynb
+   ```
+
+## Course Information
+
+- **Title**: ENGR&240: Engineering Computations
+- **Focus**: Numerical solutions to engineering problems using Python
+- **Environment**: Google Colab (browser-based Jupyter notebooks)
+
+## Updates
+
+This repository is automatically updated from the source repository. For questions or issues, please contact the WCC Engineering Department.
+
+## Solutions
+
+Students enrolled in the course can access solutions through Canvas after assignment due dates.
+
+## License
+
+These materials are provided for educational purposes.
