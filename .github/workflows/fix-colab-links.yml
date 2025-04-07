@@ -1,0 +1,98 @@
+name: Fix Colab Links
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.ipynb'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  fix-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install nbformat
+          
+      - name: Fix Colab links in notebooks
+        run: |
+          python -c '
+          import nbformat
+          import os
+          import re
+          import json
+          import glob
+          
+          # Find all notebook files
+          notebooks = glob.glob("**/*.ipynb", recursive=True)
+          changed_files = []
+          
+          for notebook_path in notebooks:
+              with open(notebook_path, "r", encoding="utf-8") as f:
+                  try:
+                      notebook = nbformat.read(f, as_version=4)
+                  except Exception as e:
+                      print(f"Error reading {notebook_path}: {e}")
+                      continue
+                  
+              changed = False
+              
+              # Look for cells with Colab links
+              for cell in notebook.cells:
+                  if cell.cell_type == "markdown":
+                      if isinstance(cell.source, list):
+                          source = "".join(cell.source)
+                      else:
+                          source = cell.source
+                          
+                      if "colab.research.google.com" in source and "github.com/edavishahl/ENGR240" in source:
+                          # Replace the old repository path with the new one
+                          new_source = re.sub(
+                              r"github\.com/edavishahl/ENGR240/blob/main/Class%20Demos%20and%20Activities/([^/]+)/([^)]+)",
+                              r"github.com/WCC-Engineering/ENGR240-Demos-and-Worksheets/blob/main/\1/\2",
+                              source
+                          )
+                          
+                          if new_source != source:
+                              if isinstance(cell.source, list):
+                                  cell.source = [new_source]
+                              else:
+                                  cell.source = new_source
+                              changed = True
+                              print(f"Fixed Colab link in {notebook_path}")
+              
+              if changed:
+                  with open(notebook_path, "w", encoding="utf-8") as f:
+                      nbformat.write(notebook, f)
+                  changed_files.append(notebook_path)
+                  
+          if changed_files:
+              print(f"Fixed Colab links in {len(changed_files)} files: {changed_files}")
+          else:
+              print("No Colab links needed fixing")
+          '
+          
+      - name: Commit changes if any
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Fix Colab links to point to WCC-Engineering repository"
+            git push
+          fi
