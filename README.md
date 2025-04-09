@@ -1,6 +1,6 @@
 # ENGR240: Engineering Computations
 
-This repository contains class demos, worksheets, and activities for ENGR&240 at Whatcom Community College.
+This repository contains class demos, worksheets, activities, and project assignments for ENGR&240 at Whatcom Community College.
 
 ## Contents
 
@@ -9,6 +9,7 @@ This repository includes:
 - Interactive worksheets
 - Practice activities
 - Supporting code examples
+- Coogle Colab notebook templates for course projects
 
 **Note:** Solution files are not included in this public repository.
 
